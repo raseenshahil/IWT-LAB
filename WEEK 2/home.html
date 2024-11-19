@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store - Home</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: rgb(42, 95, 81);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            height: 50px;
+            vertical-align: middle;
+        }
+        .header span {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+        .navbar {
+            background-color: rgb(42, 95, 81);
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ccc;
+        }
+        .sidebar {
+            background-color: rgb(169, 178, 167);
+            width: 200px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: rgb(42, 95, 81);
+            color: white;
+        }
+        #rightFrame {
+            flex: 1;
+            border: none;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="C:\Users\mmkp1\Downloads\logo.jpg" alt="Logo">
+        <span>Online Book Store</span>
+    </div>
+    <div class="navbar">
+        <a href="welcome.html" target="rightFrame">Home</a>
+        <a href="login.html" target="rightFrame">Login</a>
+        <a href="registration.html" target="rightFrame">Registration</a>
+        <a href="cataloge.html" target="rightFrame">Catalogue</a>
+        <a href="cart.html" target="rightFrame">Cart</a>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <a href="cse.html" target="rightFrame">CSE</a>
+            <a href="ece.html" target="rightFrame">ECE</a>
+            <a href="eee.html" target="rightFrame">EEE</a>
+            <a href="civil.html" target="rightFrame">CIVIL</a>
+        </div>
+        <iframe id="rightFrame" name="rightFrame" src="welcome.html"></iframe>
+    </div>
+</body>
+</html>

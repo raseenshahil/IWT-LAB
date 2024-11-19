@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .catalogue-table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .catalogue-table th, .catalogue-table td {
+            padding: 15px;
+            text-align: left;
+        }
+        .catalogue-table th {
+            background-color: rgb(42, 95, 81);
+            color: white;
+        }
+        .catalogue-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .catalogue-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .catalogue-table img {
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+        .add-to-cart-btn {
+            padding: 10px 20px;
+            background-color: rgb(42, 95, 81);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn:hover {
+            background-color: rgb(34, 77, 66);
+        }
+    </style>
+</head>
+<body>
+    <h1>Catalogue</h1>
+    <table class="catalogue-table">
+        <tr>
+            <th>Cover Page</th>
+            <th>Author Name</th>
+            <th>Publisher</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\introductiontoalgoritham.jpg" alt="Introduction to Algorithms"></td>
+            <td>Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</td>
+            <td>The MIT Press</td>
+            <td>1000 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\cnbook.jpg" alt="Computer Networks"></td>
+            <td>Andrew S. Tanenbaum</td>
+            <td>Prentice Hall</td>
+            <td>850 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\Theaory of computation.jpg" alt="Introduction to the Theory of Computation"></td>
+            <td>Michael Sipser</td>
+            <td>Cengage Learning</td>
+            <td>1050 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\circuitthoeary.jpg" alt="Electronic Devices and Circuit Theory"></td>
+            <td>Robert Boylestad</td>
+            <td>Pearson</td>
+            <td>700 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\microelectronic circuit.jpg" alt="Microelectronic Circuits"></td>
+            <td>Adel S. Sedra, Kenneth C. Smith</td>
+            <td>Oxford University Press</td>
+            <td>800 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\communicationsystems.jpg" alt="Communication Systems"></td>
+            <td>Simon Haykin</td>
+            <td>Wiley</td>
+            <td>950 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\powersystems.jpg" alt="Electrical Engineering: Principles and Applications"></td>
+            <td>John Bentley</td>
+            <td>McGraw-Hill</td>
+            <td>750 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\electrical mechinary.jpg" alt="Electric Machinery and Power System Fundamentals"></td>
+            <td>Stephen J. Chapman</td>
+            <td>McGraw-Hill</td>
+            <td>800 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\electricalpower.jpg" alt="Electrical Power Systems"></td>
+            <td>C. L. Wadhwa</td>
+            <td>Wiley</td>
+            <td>900 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\structural analysis.jpg" alt="Structural Analysis"></td>
+            <td>R.C. Hibbeler</td>
+            <td>Pearson</td>
+            <td>800 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\design of reinforcement.jpg" alt="Design of Reinforced Concrete"></td>
+            <td>Jack C. McCormac, James K. Nelson</td>
+            <td>Wiley</td>
+            <td>850 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="C:\Users\mmkp1\Downloads\buildingconstruction.jpg" alt="Building Construction"></td>
+            <td>W.B. Mckay</td>
+            <td>McGraw-Hill</td>
+            <td>850 Rs</td>
+            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+        </tr>
+    </table>
+</body>
+</html>
