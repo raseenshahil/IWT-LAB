@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+    <!ELEMENT books (book+)>
+    <!ELEMENT book (title, author, isbn, publisher, edition, price)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT isbn (#PCDATA)>
+    <!ELEMENT publisher (#PCDATA)>
+    <!ELEMENT edition (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+]>
+<?xml-stylesheet type="text/xsl" href="#style1"?>
+
+<books>
+    <book>
+        <title>Effective Java</title>
+        <author>Joshua Bloch</author>
+        <isbn>978-0134685991</isbn>
+        <publisher>Addison-Wesley</publisher>
+        <edition>3rd</edition>
+        <price>45.00</price>
+    </book>
+    <book>
+        <title>Clean Code</title>
+        <author>Robert C. Martin</author>
+        <isbn>978-0132350884</isbn>
+        <publisher>Prentice Hall</publisher>
+        <edition>1st</edition>
+        <price>50.00</price>
+    </book>
+    <book>
+        <title>The Pragmatic Programmer</title>
+        <author>Andrew Hunt, David Thomas</author>
+        <isbn>978-0135957059</isbn>
+        <publisher>Addison-Wesley</publisher>
+        <edition>2nd</edition>
+        <price>55.00</price>
+    </book>
+</books>
+
+<!-- Inline XSLT Stylesheet -->
+<xsl:stylesheet id="style1" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html"/>
+    <xsl:template match="/">
+        <html>
+            <head>
+                <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    th {
+                        background-color: grey;
+                        color: white;
+                        padding: 10px;
+                    }
+                    td {
+                        padding: 10px;
+                        border: 1px solid #ddd;
+                    }
+                    .author {
+                        background-color: lightblue;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                    .title {
+                        background-color: lightgreen;
+                    }
+                    .isbn {
+                        background-color: lightcoral;
+                    }
+                    .publisher {
+                        background-color: lightgoldenrodyellow;
+                    }
+                    .edition {
+                        background-color: lightpink;
+                    }
+                    .price {
+                        background-color: lightseagreen;
+                    }
+                </style>
+            </head>
+            <body>
+                <h2>Book Information</h2>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>ISBN</th>
+                        <th>Publisher</th>
+                        <th>Edition</th>
+                        <th>Price</th>
+                    </tr>
+                    <xsl:for-each select="books/book">
+                        <tr>
+                            <td class="title"><xsl:value-of select="title"/></td>
+                            <td class="author"><xsl:value-of select="author"/></td>
+                            <td class="isbn"><xsl:value-of select="isbn"/></td>
+                            <td class="publisher"><xsl:value-of select="publisher"/></td>
+                            <td class="edition"><xsl:value-of select="edition"/></td>
+                            <td class="price"><xsl:value-of select="price"/></td>
+                        </tr>
+                    </xsl:for-each>
+                </table>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
