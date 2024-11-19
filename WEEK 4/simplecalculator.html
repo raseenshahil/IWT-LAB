@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            background-color: #0c0505;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(83, 7, 7, 0.3);
+        }
+
+        #display {
+            width: 95%;
+            height: 50px;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: right;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f1f0f0;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: #8f8787;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        .zero {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendNumber('/')">/</button>
+            <button onclick="appendNumber('*')">*</button>
+            <button onclick="deleteNumber()">DEL</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendNumber('-')">-</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendNumber('+')">+</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendNumber('0')" class="zero">0</button>
+            <button onclick="appendNumber('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        // function clearDisplay() {
+        //     document.getElementById('display').value = '';
+        // }
+
+        // function appendNumber(number) {
+        //     document.getElementById('display').value += number;
+        // }
+
+        // function deleteNumber() {
+        //     let display = document.getElementById('display').value;
+        //     document.getElementById('display').value = display.substring(0, display.length - 1);
+        // }
+
+        // function calculate() {
+        //     let result = eval(document.getElementById('display').value);
+        //     document.getElementById('display').value = result;
+        // }
+        function appendNumber(number) {
+    document.getElementById('display').value += number;
+}
+
+function appendOperator(operator) {
+    document.getElementById('display').value += operator;
+}
+
+// Function to clear the display
+function clearDisplay() {
+    document.getElementById('display').value = '';
+}
+
+// Function to calculate the result
+function calculate() {
+    let expression = document.getElementById('display').value;
+    
+    // Check for trigonometric functions and close the parentheses if necessary
+    if (expression.includes('Math.sin(') || expression.includes('Math.cos(') || expression.includes('Math.tan(') || expression.includes('Math.log10(')) {
+        expression += ')';
+    }
+
+    try {
+        let result = eval(expression);
+        document.getElementById('display').value = result;
+    } catch (error) {
+        document.getElementById('display').value = 'Error';
+    }
+}
+
+// Function to handle keyboard input
+function handleKeyboardInput(event) {
+    const key = event.key;
+
+    if (!isNaN(key) || key === '.') {
+        appendNumber(key);
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        appendOperator(key);
+    } else if (key.toLowerCase() === 'c') {
+        clearDisplay();
+    } else if (key === 'Enter' || key === '=') {
+        calculate();
+    } else if (key === 'Backspace') {
+        document.getElementById('display').value = document.getElementById('display').value.slice(0, -1);
+    } else if (key === 's') {
+        appendOperator('Math.sin(');
+    } else if (key === 'o') {
+        appendOperator('Math.cos(');
+    } else if (key === 't') {
+        appendOperator('Math.tan(');
+    } else if (key === 'l') {
+        appendOperator('Math.log10(');
+    }
+}
+
+// Add event listener for keyboard input
+document.addEventListener('keydown', handleKeyboardInput);
+
+    </script>
+</body>
+</html>
