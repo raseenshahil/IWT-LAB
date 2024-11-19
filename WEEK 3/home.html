@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #topFrame {
+            height: 170px;
+            background-color: #867035;
+            color: rgb(191, 185, 180);
+            padding: 10px;
+            text-align: center;
+        }
+        #topFrame img {
+            height: 60px; /* Adjust as needed */
+            margin-right: 60px;
+        }
+        #topFrame a {
+            color: rgb(206, 196, 196);
+            margin: 0 20px;
+            text-decoration: none;
+        }
+        #topFrame a:hover {
+            text-decoration: underline;
+        }
+        #leftFrame {
+            background-color: #ae9753;
+            padding: 15px;
+            width: 15%;
+            float: left;
+        }
+        #leftFrame a {
+            display: block;
+            color: #282626;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        #leftFrame a:hover {
+            background-color: #dfebe5;
+        }
+        #rightFrame {
+            margin-left: 20%;
+            padding: 15px;
+        }
+        #rightFrame table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #rightFrame table, #rightFrame th, #rightFrame td {
+            border: 1px solid black;
+        }
+        #rightFrame th, #rightFrame td {
+            padding: 15px;
+            text-align: left;
+        }
+        #rightFrame th {
+            background-color: #af8e4c;
+            color: white;
+        }
+        .book-image {
+            width: 50px;
+            height: auto;
+        }
+        .add-to-cart, .remove-from-cart {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-container {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+            width: 300px;
+            margin: 0 auto;
+        }
+        .form-container input[type="text"], .form-container input[type="password"], .form-container input[type="email"], .form-container input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            background-color: #8a8229;
+            color: rgb(201, 189, 189);
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container button:hover {
+            opacity: 0.8;
+        }
+    </style>
+    <script>
+        let cart = [];
+
+        function toggleForm(formId) {
+            var forms = document.getElementsByClassName('form-container');
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function showBooks(category) {
+            const bookData = {
+                cse: [
+                    { title: "Introduction to Algorithms", author: "Thomas H. Cormen", price: "$50", image: "C:/Users/mmkp1/Downloads/introductiontoalgoritham.jpg" },
+                    { title: "Artificial Intelligence: A Modern Approach", author: "Stuart Russell", price: "$40", image: "C:\Users\mmkp1\Downloads\aibooks.jpg" }
+                ],
+                ece: [
+                    { title: "Digital Signal Processing", author: "John G. Proakis", price: "$45", image: "dsp.jpg" },
+                    { title: "Microelectronic Circuits", author: "Adel S. Sedra", price: "$55", image: "microelectronics.jpg" }
+                ],
+                eee: [
+                    { title: "Electrical Machinery", author: "P.S. Bimbhra", price: "$60", image: "machinery.jpg" },
+                    { title: "Power Electronics", author: "Muhammad H. Rashid", price: "$65", image: "power_electronics.jpg" }
+                ],
+                civil: [
+                    { title: "Structural Analysis", author: "R.C. Hibbeler", price: "$70", image: "structural_analysis.jpg" },
+                    { title: "Design of Reinforced Concrete", author: "Jack C. McCormac", price: "$75", image: "reinforced_concrete.jpg" }
+                ]
+            };
+
+            const books = bookData[category] || [];
+            let bookListHTML = "<h2>" + category.toUpperCase() + " Books</h2><table><tr><th>Image</th><th>Title</th><th>Author</th><th>Price</th><th></th></tr>";
+
+            books.forEach((book, index) => {
+                bookListHTML += `
+                    <tr>
+                        <td><img src="${book.image}" alt="${book.title}" class="book-image"></td>
+                        <td>${book.title}</td>
+                        <td>${book.author}</td>
+                        <td>${book.price}</td>
+                        <td><a href="javascript:void(0);" class="add-to-cart" onclick="addToCart(${index}, '${category}')">Add to Cart</a></td>
+                    </tr>
+                `;
+            });
+
+            bookListHTML += "</table>";
+            document.getElementById('rightFrame').innerHTML = bookListHTML;
+        }
+
+        function addToCart(index, category) {
+            const bookData = {
+                cse: [
+                    { title: "Introduction to Algorithms", author: "Thomas H. Cormen", price: "$50", image: "C:/Users/mmkp1/Downloads/introductiontoalgoritham.jpg" },
+                    { title: "Artificial Intelligence: A Modern Approach", author: "Stuart Russell", price: "$40", image: "C:\Users\mmkp1\Downloads\aibooks.jpg" }
+                ],
+                ece: [
+                    { title: "Digital Signal Processing", author: "John G. Proakis", price: "$45", image: "dsp.jpg" },
+                    { title: "Microelectronic Circuits", author: "Adel S. Sedra", price: "$55", image: "microelectronics.jpg" }
+                ],
+                eee: [
+                    { title: "Electrical Machinery", author: "P.S. Bimbhra", price: "$60", image: "machinery.jpg" },
+                    { title: "Power Electronics", author: "Muhammad H. Rashid", price: "$65", image: "power_electronics.jpg" }
+                ],
+                civil: [
+                    { title: "Structural Analysis", author: "R.C. Hibbeler", price: "$70", image: "structural_analysis.jpg" },
+                    { title: "Design of Reinforced Concrete", author: "Jack C. McCormac", price: "$75", image: "reinforced_concrete.jpg" }
+                ]
+            };
+
+            const book = bookData[category][index];
+            cart.push(book);
+            alert(`${book.title} has been added to your cart.`);
+        }
+
+        function showCatalog() {
+            const bookData = {
+                cse: [
+                    { title: "Introduction to Algorithms", author: "Thomas H. Cormen", price: "$50", image: "C:/Users/mmkp1/Downloads/introductiontoalgoritham.jpg" },
+                    { title: "Artificial Intelligence: A Modern Approach", author: "Stuart Russell", price: "$40", image: "C:\Users\mmkp1\Downloads\aibooks.jpg" }
+                ],
+                ece: [
+                    { title: "Digital Signal Processing", author: "John G. Proakis", price: "$45", image: "dsp.jpg" },
+                    { title: "Microelectronic Circuits", author: "Adel S. Sedra", price: "$55", image: "microelectronics.jpg" }
+                ],
+                eee: [
+                    { title: "Electrical Machinery", author: "P.S. Bimbhra", price: "$60", image: "machinery.jpg" },
+                    { title: "Power Electronics", author: "Muhammad H. Rashid", price: "$65", image: "power_electronics.jpg" }
+                ],
+                civil: [
+                    { title: "Structural Analysis", author: "R.C. Hibbeler", price: "$70", image: "structural_analysis.jpg" },
+                    { title: "Design of Reinforced Concrete", author: "Jack C. McCormac", price: "$75", image: "reinforced_concrete.jpg" }
+                ]
+            };
+
+            // Combine all books into a single array
+            const allBooks = Object.values(bookData).flat();
+
+            // Shuffle the array
+            for (let i = allBooks.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [allBooks[i], allBooks[j]] = [allBooks[j], allBooks[i]];
+            }
+
+            let catalogHTML = "<h2>Book Catalog</h2><table><tr><th>Image</th><th>Title</th><th>Author</th><th>Price</th><th></th></tr>";
+
+            allBooks.forEach((book, index) => {
+                catalogHTML += `
+                    <tr>
+                        <td><img src="${book.image}" alt="${book.title}" class="book-image"></td>
+                        <td>${book.title}</td>
+                        <td>${book.author}</td>
+                        <td>${book.price}</td>
+                        <td><a href="javascript:void(0);" class="add-to-cart" onclick="addToCart(${index}, 'allBooks')">Add to Cart</a></td>
+                    </tr>
+                `;
+            });
+
+            catalogHTML += "</table>";
+            document.getElementById('rightFrame').innerHTML = catalogHTML;
+        }
+
+        function showCart() {
+            let cartHTML = "<h2>Your Cart</h2><table><tr><th>Image</th><th>Title</th><th>Author</th><th>Price</th><th></th></tr>";
+
+            cart.forEach((book, index) => {
+                cartHTML += `
+                    <tr>
+                        <td><img src="${book.image}" alt="${book.title}" class="book-image"></td>
+                        <td>${book.title}</td>
+                        <td>${book.author}</td>
+                        <td>${book.price}</td>
+                        <td><a href="javascript:void(0);" class="remove-from-cart" onclick="removeFromCart(${index})">Remove</a></td>
+                    </tr>
+                `;
+            });
+
+            cartHTML += "</table>";
+            document.getElementById('rightFrame').innerHTML = cartHTML;
+        }
+
+        function removeFromCart(index) {
+            const removedBook = cart.splice(index, 1)[0];
+            alert(`${removedBook.title} has been removed from your cart.`);
+            showCart();
+        }
+
+        
+    </script>
+</head>
+<body>
+    <div id="topFrame">
+        <img src="C:/Users/mmkp1/Downloads/logo.jpg" alt="Logo">
+        <div>
+        <h1>Online Book Store</h1>
+        <a href="home.html">Home</a>
+        <a href="javascript:void(0);" onclick="toggleForm('loginForm')">Login</a>
+        <a href="javascript:void(0);" onclick="toggleForm('registerForm')">Registration</a>
+        <a href="javascript:void(0);" onclick="showCart()">Cart</a>
+        <a href="javascript:void(0);" onclick="showCatalog()">Catalog</a>
+        </div>
+    </div>
+
+    <div id="leftFrame">
+        <a href="javascript:void(0);" onclick="showBooks('cse')">CSE</a>
+        <a href="javascript:void(0);" onclick="showBooks('ece')">ECE</a>
+        <a href="javascript:void(0);" onclick="showBooks('eee')">EEE</a>
+        <a href="javascript:void(0);" onclick="showBooks('civil')">CIVIL</a>
+    </div>
+
+    <div id="rightFrame">
+        <h2>Welcome to the Online Book Store</h2>
+        <p>Explore our collection of books across various disciplines. Use the links on the left to browse specific categories.</p>
+
+        <div id="loginForm" class="form-container">
+            <h2>Login</h2>
+            <form action="/submit_login" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="registerForm" class="form-container">
+            <h2>Registration</h2>
+            <form action="/submit_registration" method="post">
+                <label for="reg_username">Username</label>
+                <input type="text" id="reg_username" name="username" placeholder="Enter your username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="reg_password">Password</label>
+                <input type="password" id="reg_password" name="password" placeholder="Enter your password" required>
+
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

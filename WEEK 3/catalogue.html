@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #topFrame {
+            height: 170px;
+            background-color: #867035;
+            color: rgb(191, 185, 180);
+            padding: 10px;
+            text-align: center;
+        }
+        #topFrame img {
+            height: 60px; /* Adjust as needed */
+            margin-right: 60px;
+        }
+        #topFrame a {
+            color: rgb(206, 196, 196);
+            margin: 0 20px;
+            text-decoration: none;
+        }
+        #topFrame a:hover {
+            text-decoration: underline;
+        }
+        #leftFrame {
+            background-color: #ae9753;
+            padding: 15px;
+            width: 15%;
+            float: left;
+        }
+        #leftFrame a {
+            display: block;
+            color: #282626;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        #leftFrame a:hover {
+            background-color: #dfebe5;
+        }
+        #rightFrame {
+            margin-left: 20%;
+            padding: 15px;
+        }
+        #rightFrame table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #rightFrame table, #rightFrame th, #rightFrame td {
+            border: 1px solid black;
+        }
+        #rightFrame th, #rightFrame td {
+            padding: 15px;
+            text-align: left;
+        }
+        #rightFrame th {
+            background-color: #af8e4c;
+            color: white;
+        }
+        .book-image {
+            width: 50px;
+            height: auto;
+        }
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-container {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+            width: 300px;
+            margin: 0 auto;
+        }
+        .form-container input[type="text"], .form-container input[type="password"], .form-container input[type="email"], .form-container input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            background-color: #8a8229;
+            color: rgb(201, 189, 189);
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div id="topFrame">
+        <img src="C:/Users/mmkp1/Downloads/logo.jpg" alt="Logo">
+        <div>
+        <h1>Online Book Store</h1>
+        <a href="home.html">Home</a>
+        <a href="javascript:void(0);" onclick="toggleForm('loginForm')">Login</a>
+        <a href="javascript:void(0);" onclick="toggleForm('registerForm')">Registration</a>
+        <a href="javascript:void(0);" onclick="showCatalog()">Catalog</a>
+        </div>
+    </div>
+
+    <div id="leftFrame">
+        <a href="javascript:void(0);" onclick="showBooks('cse')">CSE</a>
+        <a href="javascript:void(0);" onclick="showBooks('ece')">ECE</a>
+        <a href="javascript:void(0);" onclick="showBooks('eee')">EEE</a>
+        <a href="javascript:void(0);" onclick="showBooks('civil')">CIVIL</a>
+    </div>
+
+    <div id="rightFrame">
+        <h2>Welcome to the Online Book Store</h2>
+        <p>Explore our collection of books across various disciplines. Use the links on the left to browse specific categories.</p>
+
+        <div id="loginForm" class="form-container">
+            <h2>Login</h2>
+            <form action="/submit_login" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="registerForm" class="form-container">
+            <h2>Registration</h2>
+            <form action="/submit_registration" method="post">
+                <label for="reg_username">Username</label>
+                <input type="text" id="reg_username" name="username" placeholder="Enter your username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="reg_password">Password</label>
+                <input type="password" id="reg_password" name="password" placeholder="Enter your password" required>
+
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
