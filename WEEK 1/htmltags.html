@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .tag-row:hover {
+            background-color: #e6f2ff;
+            transition: background-color 0.3s ease;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                <span class="text-blue-600">HTML</span> Tags Explorer
+            </h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                An interactive guide to understanding and exploring HTML tags. Click on a tag to reveal its code and browser view.
+            </p>
+        </header>
+
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="overflow-x-auto custom-scrollbar">
+                <table class="w-full text-sm" id="tags-table">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="p-4 text-left">Tag</th>
+                            <th class="p-4 text-left">Name</th>
+                            <th class="p-4 text-left">Code Example</th>
+                            <th class="p-4 text-left">Browser View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JavaScript will populate this -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Reuse the existing tags array and functions from the previous script
+        const tags = [
+            // ... (keep the existing tags array from the previous HTML)
+ { tag: "&lt;!-- comment --&gt;", name: "Comment", code: "&lt;!--This can be viewed in the HTML part of a document--&gt;", view: "<b>Nothing will show</b>" },
+            { tag: "&lt;a&gt;", name: "Anchor", code: '&lt;a href="http://www.domain.com/"&gt;https://sms.bicpu.edu.in/student/home;/a&gt;', view: "<a href='https://sms.bicpu.edu.in/student/home'>Visit Our Site</a>" },
+            { tag: "&lt;b&gt;", name: "Bold", code: "&lt;b&gt;Example&lt;/b&gt;", view: "<b>hello</b>" },
+            { tag: "&lt;big&gt;", name: "Big (text)", code: "&lt;big&gt;Example&lt;/big&gt;", view: "<big>hello</big>" },
+            { tag: "&lt;body&gt;", name: "Body of HTML document", code: "&lt;body&gt;The content of your HTML page&lt;/body&gt;", view: "Contents of your web page" },
+            { tag: "&lt;br&gt;", name: "Line break", code: "The contents of your page&lt;br&gt;The contents of your page", view: "The contents of your web page<br>The contents of your web page" },
+            { tag: "&lt;center&gt;", name: "Center", code: "&lt;center&gt;This will center your contents&lt;/center&gt;", view: "<center>This will center your contents</center>" },
+            { tag: "&lt;dd&gt;", name: "Definition description", code: "&lt;dl&gt;&lt;dt&gt;Definition term&lt;/dt&gt;&lt;dd&gt;Definition of the term&lt;/dd&gt;&lt;/dl&gt;", view: "<dl><dt>Definition term</dt><dd>Definition of the term</dd></dl>" },
+            { tag: "&lt;dl&gt;", name: "Definition list", code: "&lt;dl&gt;&lt;dt&gt;Definition term&lt;/dt&gt;&lt;dd&gt;Definition of the term&lt;/dd&gt;&lt;/dl&gt;", view: "<dl><dt>Definition term</dt><dd>Definition of the term</dd></dl>" },
+            { tag: "&lt;dt&gt;", name: "Definition term", code: "&lt;dl&gt;&lt;dt&gt;Definition term&lt;/dt&gt;&lt;dd&gt;Definition of the term&lt;/dd&gt;&lt;/dl&gt;", view: "<dl><dt>Definition term</dt><dd>Definition of the term</dd></dl>" },
+            { tag: "&lt;em&gt;", name: "Emphasis", code: "&lt;em&gt;Example&lt;/em&gt;", view: "<em>Example</em>" },
+            { tag: "&lt;embed&gt;", name: "Embed object", code: '&lt;embed src="yourfile.mid" width="100%" height="60" align="center"&gt;', view: "<embed src='yourfile.mid' width='100%' height='60' align='center'>" },
+            { tag: "&lt;font&gt;", name: "Font", code: '&lt;font face="Times New Roman"&gt;Example&lt;/font&gt;', view: '<font face="Times New Roman">hello world</font>' },
+            { tag: "&lt;form&gt;", name: "Form", code: '&lt;form action="mailto:you@yourdomain.com"&gt;Name: &lt;input name="Name" value="" size="10"&gt;&lt;br&gt;Email: &lt;input name="Email" value="" size="10"&gt;&lt;br&gt;&lt;center&gt;&lt;input type="submit"&gt;&lt;/center&gt;&lt;/form&gt;', view: 'Name: <input name="Name" value="" size="10"><br>Email: <input name="Email" value="" size="10"><br><center><input type="submit"></center>' },
+            { tag: "&lt;h1&gt; to &lt;h6&gt;", name: "Headings", code: "&lt;h1&gt;Heading 1 Example&lt;/h1&gt;&lt;h2&gt;Heading 2 Example&lt;/h2&gt;&lt;h3&gt;Heading 3 Example&lt;/h3&gt;&lt;&lt;h4&gt;Heading 4 Example&lt;/4&gt;&lt;&lt;h5&gt;Heading 5 Example&lt;/h5&gt;&lt;&lt;h6&gt;Heading 6 Example&lt;/h5&gt;&lt;", view: "<h1>Heading 1 Example</h1><h2>Heading 2 Example</h2><h3>Heading 3 Example</h3><h4>Heading 4 Example</h4><h5>Heading 5 Example</h5><h6>Heading 6 Example</h6>" },
+            { tag: "&lt;head&gt;", name: "Head of HTML document", code: "&lt;head&gt;Contains elements describing the document&lt;/head&gt;", view: "Nothing will show" },
+            { tag: "&lt;hr&gt;", name: "Horizontal rule", code: "&lt;hr /&gt;", view: "<hr />" },
+            { tag: "&lt;html&gt;", name: "HTML document", code: "&lt;html&gt;The entire HTML document&lt;/html&gt;", view: "The entire HTML document" },
+            { tag: "&lt;i&gt;", name: "Italic", code: "&lt;i&gt;Example&lt;/i&gt;", view: "<i>hi how are you</i>" },
+            { tag: "&lt;img&gt;", name: "Image", code: '&lt;img src="image.jpg" alt="Image"&gt;', view: '<img src="pic_trulli.jpg" alt="Italian Trulli"' },
+            { tag: "&lt;input&gt;", name: "Input field", code: '&lt;input type="text" name="name"&gt;', view: '<input type="text" name="name">'},
+            { tag: "&lt;input type=&quot;button&quot;&gt;", name: "Input Button", code: '&lt;input type="button" value="Click me"&gt;', view: '<input type="button" value="Click me">' },
+            { tag: "&lt;input type=&quot;checkbox&quot;&gt;", name: "Input Checkbox", code: '&lt;input type="checkbox"&gt;Option', view: '<input type="checkbox">Option' },
+            { tag: "&lt;input type=&quot;color&quot;&gt;", name: "Input Color", code: '&lt;input type="color"&gt;', view: '<input type="color">' },
+            { tag: "&lt;input type=&quot;date&quot;&gt;", name: "Input Date", code: '&lt;input type="date"&gt;', view: '<input type="date">' },
+            { tag: "&lt;input type=&quot;datetime-local&quot;&gt;", name: "Input DateTime Local", code: '&lt;input type="datetime-local"&gt;', view: '<input type="datetime-local">' },
+            { tag: "&lt;input type=&quot;email&quot;&gt;", name: "Input Email", code: '&lt;input type="email"&gt;', view: '<input type="email">' },
+            { tag: "&lt;input type=&quot;file&quot;&gt;", name: "Input File", code: '&lt;input type="file"&gt;', view: '<input type="file">' },
+            { tag: "&lt;input type=&quot;hidden&quot;&gt;", name: "Input Hidden", code: '&lt;input type="hidden" value="Hidden Value"&gt;', view: '<input type="hidden" value="Hidden Value">' },
+            { tag: "&lt;input type=&quot;image&quot;&gt;", name: "Input Image", code: '&lt;input type="image" src="image.jpg"&gt;', view: '<input type="image" src="image.jpg">' },
+            { tag: "&lt;input type=&quot;month&quot;&gt;", name: "Input Month", code: '&lt;input type="month"&gt;', view: '<input type="month">' },
+            { tag: "&lt;input type=&quot;number&quot;&gt;", name: "Input Number", code: '&lt;input type="number"&gt;', view: '<input type="number">' },
+            { tag: "&lt;li&gt;", name: "List item", code: "&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;", view: "<ul><li>Item 1</li><li>Item 2</li></ul>" },
+            { tag: "&lt;link&gt;", name: "Link", code: '&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;', view: 'External resource not displayed' },
+            { tag: "&lt;meta&gt;", name: "Metadata", code: '&lt;meta charset="UTF-8"&gt;', view: 'Metadata not displayed' },
+            { tag: "&lt;ol&gt;", name: "Ordered list", code: "&lt;ol&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ol&gt;", view: "<ol><li>Item 1</li><li>Item 2</li></ol>" },
+            { tag: "&lt;option&gt;", name: "Option", code: '&lt;select&gt;&lt;option value="1"&gt;Option 1&lt;/option&gt;&lt;option value="2"&gt;Option 2&lt;/&lt;select&gt;&lt;option value="3"&gt;Option 3&lt;/&lt;select&gt;&lt;option value="4"&gt;Option 4&lt;/option&gt;&lt;/select&gt;', view: '<select><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option><option value="3">Option 4</option></select>' },
+            { tag: "&lt;p&gt;", name: "Paragraph", code: "&lt;p&gt;paragrpagh&lt;/p&gt;", view: "<b><p>A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs. This is because paragraphs show a reader where the subdivisions of an essay begin and end, and thus help the reader see the organization of the essay and grasp its main points.Paragraphs can contain many different kinds of information. A paragraph could contain a series of brief examples or a single long illustration of a general point. It might describe a place, character, or process; narrate a series of events; compare or contrast two or more things; classify items into categories; or describe causes and effects. Regardless of the kind of information they contain, all paragraphs share certain characteristics. One of the most important of these is a topic sentence.</p></b>" },
+            { tag: "&lt;script&gt;", name: "Script", code: '&lt;script type="text/javascript"&gt;alert("Hello World!");&lt;/script&gt;', view: 'Hello world' },
+            { tag: "&lt;select&gt;", name: "Select", code: '&lt;select&gt;&lt;option value="1"&gt;Option 1&lt;/option&gt;&lt;option value="2"&gt;Option 2&lt;/option&gt;&lt;/select&gt;', view: '<select><option value="1">Option 1</option><option value="2">Option 2</option></select>' },
+            { tag: "&lt;style&gt;", name: "Style", code: '&lt;style&gt;body {font-family: Arial;}&lt;/style&gt;', view: 'A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs. ' },
+            { tag: "&lt;table&gt;", name: "Table", code: '&lt;table&gt;&lt;tr&gt;&lt;th&gt;Header 1&lt;/th&gt;&lt;th&gt;Header 2&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;', view: '<table><tr><th>Header 1</th><th>Header 2</th></tr></table>' },
+            { tag: "&lt;thead&gt;", name: "Table head", code: '&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Header 1&lt;/th&gt;&lt;th&gt;Header 2&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;/table&gt;', view: '<table><thead><tr><th>Header 1</th><th>Header 2</th></tr></thead></table>' },
+            { tag: "&lt;title&gt;", name: "Title", code: '&lt;title&gt;Document Title&lt;/title&gt;', view: '<b>INTERACTIVE HTML TAGS PAGE</b>' },
+            { tag: "&lt;tr&gt;", name: "Table row", code: '&lt;table&gt;&lt;tr&gt;&lt;td&gt;Row 1, Column 1&lt;/td&gt;&lt;td&gt;Row 1, Column 2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;', view: '<table><tr><td>Row 1, Column 1</td><td>Row 1, Column 2</td></tr></table>' },
+            { tag: "&lt;ul&gt;", name: "Unordered list", code: '&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;', view: '<ul><li>Item 1</li><li>Item 2</li></ul>' },
+        
+        ];
+
+        function createTableRow(tag) {
+            const row = document.createElement("tr");
+            row.classList.add("tag-row", "border-b", "hover:bg-blue-50", "cursor-pointer");
+            row.innerHTML = `
+                <td class="p-4 text-gray-800">${tag.tag}</td>
+                <td class="p-4 text-gray-600 tag-name">${tag.name}</td>
+                <td class="p-4 text-gray-700 code-example hidden">${tag.code}</td>
+                <td class="p-4 text-gray-700 browser-view hidden">${tag.view}</td>
+            `;
+            return row;
+        }
+
+        function toggleDetails(event) {
+            const target = event.target;
+            if (target.classList.contains("tag-name")) {
+                const parentRow = target.parentElement;
+                const codeExample = parentRow.querySelector(".code-example");
+                const browserView = parentRow.querySelector(".browser-view");
+
+                codeExample.classList.toggle("hidden");
+                browserView.classList.toggle("hidden");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const tableBody = document.querySelector("#tags-table tbody");
+            tags.forEach(tag => {
+                tableBody.appendChild(createTableRow(tag));
+            });
+            document.querySelector("#tags-table").addEventListener("click", toggleDetails);
+        });
+    </script>
+</body>
+</html>
