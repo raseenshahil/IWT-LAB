@@ -1,0 +1,48 @@
+.addHistory .container {
+  background-color: rgb(184, 186, 188);
+  color: rgb(0, 0, 0);
+  border-bottom: 2px solid black;
+}
+.addHistory {
+  margin-bottom: 1rem;
+}
+.addHistory .flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.addHistory label {
+  font-size: 1.5rem;
+  font-family: "Mukta", sans-serif;
+  font-weight: 600;
+}
+.addHistory p {
+  font-size: 1.3rem;
+  font-family: "Prompt", sans-serif;
+}
+.addHistory .btn-flag {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px black;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+.addHistory .btn-flag:hover {
+  opacity: 0.8;
+}
+.addHistory .btn-flag:active {
+  scale: 0.8;
+}
+@media (max-width: 635px) {
+  .addHistory p {
+    max-width: 200px;
+    text-align: center;
+  }
+  .addHistory label {
+    min-width: 60px;
+  }
+}

@@ -1,0 +1,62 @@
+.business {
+  min-height: 100vh;
+  background-color: rgb(219, 216, 219);
+}
+.business .navbar ul a {
+  text-decoration: none;
+  color: black;
+}
+.business .container {
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+}
+.business .navbar h1 {
+  color: rgb(69, 61, 61);
+  font-family: "Kalam", cursive;
+}
+.business .navbar {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+  padding: 4px 1rem;
+  font-size: 1.5rem;
+  font-family: "Roboto Mono", monospace;
+}
+.business .add-booked {
+  width: 40%;
+}
+.business .navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.business .navbar ul li {
+  transition: all 0.2s;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  list-style: none;
+}
+.business .navbar ul li:hover {
+  scale: 1.2;
+}
+.business .navbar ul li:active {
+  color: rgb(141, 130, 113);
+}
+@media (max-width: 600px) {
+  .business .navbar {
+    flex-direction: column;
+  }
+  .business .navbar ul {
+    gap: 1.5rem;
+  }
+  .business .navbar h1 {
+    font-size: 2rem;
+  }
+  .business .navbar ul li {
+    font-size: 1.2rem;
+  }
+}

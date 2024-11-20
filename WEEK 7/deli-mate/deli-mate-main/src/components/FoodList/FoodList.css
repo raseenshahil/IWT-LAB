@@ -1,0 +1,185 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.FoodList .penTool {
+  color: black;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 20;
+  transition: all 0.3s;
+  font-size: 1.3rem;
+}
+.FoodList .penTool:hover {
+  color: rgb(169, 164, 164);
+}
+.FoodList .penTool:active {
+  scale: 0.8;
+}
+.FoodList .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #538875;
+  transition: height 0.5s, opacity 1s, transform 0.5s;
+  border-radius: 15px;
+  padding: 2rem 2rem 0rem 2rem;
+  font-size: 1.6rem;
+  color: white;
+  box-shadow: -5px 5px 10px black;
+  position: relative;
+  height: 300px;
+}
+.FoodList .img-bs img {
+  width: 95%;
+  height: 85%;
+  border-radius: 15px;
+  border: 2px solid white;
+  margin-right: 3px;
+}
+.FoodList .description > h1 {
+  font-family: "Secular One", sans-serif;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgb(144, 250, 31);
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.FoodList {
+  position: relative;
+}
+.FoodList p {
+  font-family: "Kite One", sans-serif;
+  line-height: 2.3rem;
+}
+.description {
+  width: 70%;
+  overflow: scroll;
+}
+.opacity {
+  opacity: 0;
+}
+.side {
+  opacity: 1;
+}
+.FoodList .container:hover {
+  transform: scale(1.03);
+}
+.FoodList .details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  gap: 0.8rem;
+}
+#rating {
+  font-family: "Kaushan Script", cursive;
+  color: #d4e20e;
+}
+.FoodList .filter {
+  background-color: rgb(36, 36, 36);
+  height: 100vh;
+  width: 1000px;
+}
+.list-body {
+  display: flex;
+}
+.edit-once {
+  position: absolute;
+  transition: all 0.4s;
+  background-color: #538875;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  border-radius: 15px;
+}
+.edit-once .fa-xmark {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.edit-once .fa-xmark:hover {
+  opacity: 0.7;
+}
+.edit-once .fa-xmark:active {
+  scale: 0.8;
+}
+.width-once-0 {
+  width: 0%;
+}
+.width-once-100 {
+  width: 100%;
+}
+.edit-once .once-container {
+  width: 80%;
+  margin: auto;
+}
+.edit-once .once-container input,
+.edit-once .once-container select,
+.edit-once .once-container button {
+  padding-left: 1.2rem;
+  box-sizing: border-box;
+  border-radius: 15px;
+  height: 30px;
+  border: none;
+  color: black;
+  box-shadow: 0 0 10px black;
+  font-size: 1rem;
+}
+.edit-once .once-container button {
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+.edit-once .once-container button:hover {
+  opacity: 0.8;
+}
+.edit-once .once-container button:active {
+  scale: 0.8;
+}
+.edit-once .once-container div {
+  margin-top: 1rem;
+}
+.edit-once .once-container label {
+  color: white;
+}
+.edit-once .once-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (max-width: 694px) {
+  .FoodList .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    padding: 2rem 0 3rem 0;
+  }
+}
+@media (max-width: 1230px) {
+  .FoodList .container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
+  .FoodList .img-bs img {
+    width: 90%;
+    height: 95%;
+  }
+  .FoodList .img-bs {
+    width: 70%;
+  }
+}
+@media (max-width: 700px) {
+  .FoodList .container {
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+    padding: 2rem 0 3rem 0;
+  }
+}

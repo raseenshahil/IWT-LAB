@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Mono&family=Russo+One&family=Secular+One&family=Sofia+Sans:wght@300&family=Solitreo&family=Space+Mono&family=Titillium+Web:wght@300&display=swap");
+
+.Report-list {
+  width: 80%;
+  margin: auto;
+  padding: 0.5rem;
+  position: relative;
+}
+.warn-replay {
+  background-color: rgb(242, 244, 234);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.warn-replay label {
+  font-weight: 600;
+}
+.RepList {
+  padding-top: 1rem;
+}
+.Report-list .container {
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: rgb(204, 201, 196);
+  border-radius: 10px;
+}
+.Report-list .container .action-div i:hover {
+  scale: 1.2;
+}
+.Report-list .container .action-div i:active {
+  scale: 0.8;
+}
+.Report-list .container .heading {
+  margin-bottom: 1rem;
+}
+.Report-list .container .report-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.Report-list .container .report-body p {
+  line-height: 1.5rem;
+  font-family: "Prompt", sans-serif;
+}
+.Report-list .container .report-body h1 {
+  font-size: 1.5rem;
+  font-family: "Righteous", cursive;
+  text-transform: uppercase;
+  color: rgb(146, 119, 119);
+  letter-spacing: 2px;
+}
+.Report-list .container .report-body .btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.Report-list .container .msg {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.Report-list .container .report-body .btn button {
+  width: 100px;
+  height: 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+.Report-list .container .report-body .btn button:active {
+  scale: 0.8;
+}
+.Report-list .container textarea.warning {
+  resize: none;
+  width: 95%;
+  padding: 0.5rem;
+}
+.Report-list .container .msg-area {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.5s;
+}
+.height {
+  height: 0;
+  overflow: hidden;
+}
+.Report-list .container .msg-area button {
+  transition: all 0.3s;
+  padding: 0.5rem;
+}
+.Report-list .container .msg-area button:active {
+  scale: 0.8;
+}
+.Report-list .container .action-div {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: rgb(101, 105, 12);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.fa-check {
+  color: rgb(17, 162, 17);
+}
+.Report-list .container .fa-xmark {
+  color: rgb(163, 12, 12);
+}

@@ -1,0 +1,16 @@
+.history .container {
+  width: 80%;
+  margin: auto;
+}
+.history .container h1 {
+  background-color: azure;
+  margin-top: 1rem;
+}
+.history .react-load {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+  right: -35%;
+  z-index: 10;
+}

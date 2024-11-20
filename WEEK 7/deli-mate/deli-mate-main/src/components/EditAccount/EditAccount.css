@@ -1,0 +1,96 @@
+.editAccount {
+  transition: all 0.3s;
+}
+.scale {
+  opacity: 0;
+}
+.editAccount h3 {
+  padding: 0 1rem 0 1rem;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 200;
+  text-align: center;
+  width: 100%;
+}
+.editAccount .fa-xmark {
+  position: absolute;
+  z-index: 5;
+  right: 1rem;
+  top: 1rem;
+}
+.editAccount .business-new-exist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.editAccount .business-new-exist input {
+  width: 3rem;
+  height: 1rem;
+  margin-top: 0.5rem;
+}
+.editAccount div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.editAccount input {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 0.8rem;
+}
+.editAccount input[type="file"] {
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.editAccount .edit-textarea {
+  border-radius: 10px;
+  padding: 1rem;
+  resize: none;
+  margin-bottom: 0.8rem;
+}
+.editAccount .edit-username,
+.editAccount .edit-phone,
+.editAccount .edit-textarea,
+.editAccount .edit-email {
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px black;
+  font-size: 1rem;
+}
+.editAccount button {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+  background-color: rgb(79, 149, 92);
+  font-size: 1.3rem;
+  font-family: "Kite One", sans-serif;
+  font-weight: 700;
+  color: white;
+  transition: all 0.3s;
+}
+.editAccount button:active {
+  scale: 0.8;
+}
+.editAccount button:hover {
+  opacity: 0.8;
+}
+@media (max-width: 500px) {
+  .editAccount .card .edit-title {
+    font-size: 1.5rem;
+  }
+  .editAccount .card {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .editAccount button {
+    font-size: 1rem;
+  }
+  .editAccount input::placeholder,
+  .editAccount textarea::placeholder {
+    font-size: 0.8rem;
+  }
+}

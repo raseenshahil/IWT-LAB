@@ -1,0 +1,62 @@
+.Feedback {
+  width: 80%;
+  margin: auto;
+  padding: 0.5rem;
+}
+.Feedback .container .fa-xmark {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.FList {
+  padding-top: 1rem;
+}
+.Feedback .container {
+  position: relative;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: rgb(204, 201, 196);
+  border-radius: 10px;
+}
+.Feedback .container .feedback-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.Feedback .container .feedback-body p {
+  line-height: 1.5rem;
+  font-family: "Prompt", sans-serif;
+}
+.Feedback .container .feedback-body h1 {
+  font-size: 1.5rem;
+  font-family: "Mukta", sans-serif;
+  text-transform: uppercase;
+}
+.Feedback .container .textarea {
+  width: 95%;
+  resize: none;
+  height: 40px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+}
+.Feedback .container .replay {
+  width: 100%;
+  padding: 1rem 0 0 0;
+  display: flex;
+  border-bottom: 1px solid black;
+}
+.Feedback .container .replay .sent {
+  width: 5%;
+  color: rgb(44, 66, 51);
+  font-size: 1.5rem;
+}
+.Feedback .container .replay .sent .fa-paper-plane {
+  rotate: 50deg;
+}
+.FList .react-load {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  right: 7%;
+  top: 40%;
+}

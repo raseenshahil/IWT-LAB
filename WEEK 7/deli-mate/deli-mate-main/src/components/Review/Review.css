@@ -1,0 +1,53 @@
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+.review .container {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+}
+.review .profile .img-outline img {
+  width: 70px;
+  height: 70px;
+}
+.review .profile .img-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 55%;
+  overflow: hidden;
+  background-color: black;
+}
+.review .profile {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.review .profile label {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-family: "Abel", sans-serif;
+  text-transform: uppercase;
+}
+.review .rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  font-family: "Kaushan Script", cursive;
+  color: #9fa72a;
+  width: 250px;
+}
+.review .date-time {
+  font-size: 1.3rem;
+  font-family: "Roboto Mono", monospace;
+}
+.review .review-msg p {
+  padding-top: 1rem;
+  line-height: 1.5rem;
+  font-family: "Jost", sans-serif;
+}

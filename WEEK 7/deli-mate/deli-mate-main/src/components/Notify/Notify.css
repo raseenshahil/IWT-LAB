@@ -1,0 +1,73 @@
+.notify {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  z-index: 20;
+}
+.notify .fa-comment-dots {
+  font-size: 2rem;
+  color: rgb(207, 99, 99);
+}
+.notify .warn-notify {
+  position: relative;
+  background-color: rgb(220, 170, 166);
+  margin: 1rem 1rem 0 0;
+  padding: 1.3rem;
+  border-radius: 15px 0 15px 15px;
+  transition: all 0.3s;
+}
+.notify .warn-notify p {
+  color: rgb(0, 0, 0);
+  font-family: "Jost", sans-serif;
+  height: 100px;
+  overflow-y: scroll;
+}
+.notify .warn-notify textarea {
+  width: 90%;
+  resize: none;
+  border-radius: 15px 0 0 15px;
+  padding: 0.3rem;
+  line-height: 1.2rem;
+}
+.notify .warn-notify .reason {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+.notify .warn-notify .reason button {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  transition: all 0.3s;
+  border-radius: 0 15px 15px 0;
+  border: none;
+}
+.notify .warn-notify .reason button:active {
+  scale: 0.8;
+}
+.notify .warn-notify::after {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(220, 170, 166);
+  position: absolute;
+  top: 0;
+  right: -1.3rem;
+}
+.notify .warn-notify .fa-xmark {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+}
+
+.msg-low {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.msg-high {
+  width: 230px;
+  height: 180px;
+  visibility: visible;
+}

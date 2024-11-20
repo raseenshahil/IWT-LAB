@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<!DOCTYPE books SYSTEM "books.dtd">
+<books>
+    <book>
+        <title>Introduction to Programming</title>
+        <author>Jane Doe</author>
+        <isbn>978-1234567890</isbn>
+        <publisher>TechBooks</publisher>
+        <edition>3rd</edition>
+        <price>450</price>
+    </book>
+    <book>
+        <title>Advanced Mathematics</title>
+        <author>John Smith</author>
+        <isbn>978-9876543210</isbn>
+        <publisher>MathWorld</publisher>
+        <edition>2nd</edition>
+        <price>600</price>
+    </book>
+    <book>
+        <title>Data Structures and Algorithms</title>
+        <author>Emily Johnson</author>
+        <isbn>978-5647382910</isbn>
+        <publisher>CodeMaster Publications</publisher>
+        <edition>4th</edition>
+        <price>700</price>
+    </book>
+    <book>
+        <title>Modern Physics</title>
+        <author>Albert Newton</author>
+        <isbn>978-1928374655</isbn>
+        <publisher>ScienceWorld</publisher>
+        <edition>1st</edition>
+        <price>500</price>
+    </book>
+    <book>
+        <title>History of Art</title>
+        <author>Claire Benson</author>
+        <isbn>978-1122334455</isbn>
+        <publisher>ArtPress</publisher>
+        <edition>5th</edition>
+        <price>850</price>
+    </book>
+    <book>
+        <title>Machine Learning Basics</title>
+        <author>Robert Williams</author>
+        <isbn>978-5566778899</isbn>
+        <publisher>AI Experts</publisher>
+        <edition>2nd</edition>
+        <price>1200</price>
+    </book>
+</books>

@@ -1,0 +1,101 @@
+.create-box .heading {
+  font-family: "Titillium Web", sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.create input[type="number"] {
+  -moz-appearance: textfield;
+}
+.create input[type="checkbox"] {
+  width: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  gap: 5px;
+  color: rgb(97, 88, 88);
+}
+.forBusiness {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: height 0.2s, opacity 0.4s;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.resize {
+  opacity: 1;
+  height: 120px;
+  width: 100%;
+  overflow: visible;
+}
+.create p {
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.qout h1 {
+  font-size: 4rem;
+  margin: auto;
+  margin-top: 3rem;
+  width: 70%;
+}
+.create-eye {
+  position: absolute;
+  right: 1rem;
+  top: 10.2rem;
+  color: #b5c3bc;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+.create-eye:hover {
+  color: rgb(67, 64, 64);
+}
+
+.qout {
+  width: 600px;
+  height: 600px;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 4rem;
+
+  animation: infinite move 2s alternate;
+}
+.Address .address {
+  width: 70%;
+}
+.Address .pincode {
+  width: 28%;
+}
+.Address {
+  display: flex;
+  gap: 2%;
+}
+@media (max-width: 806px) {
+  .create .qout {
+    display: none;
+  }
+  .create .create-box {
+    width: 70%;
+  }
+  .create input {
+    width: 100%;
+  }
+  .create form button {
+    width: 100%;
+  }
+}

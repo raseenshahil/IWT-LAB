@@ -1,0 +1,337 @@
+.editAccount {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+}
+.editAccount .card {
+  position: absolute;
+  height: 80%;
+  transition: all 0.3s;
+}
+.account .account-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account {
+  min-height: 100vh;
+  background-color: rgb(219, 216, 219);
+}
+.account .noData {
+  text-align: center;
+  margin-top: 1rem;
+}
+.account .fa-pen-to-square {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.account .ac-container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+.account .heading {
+  font-family: "Pacifico", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  animation: infinite move 2s alternate;
+}
+.account .container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  position: relative;
+}
+/* changed */
+.account .scale,
+.editAccount .scale {
+  scale: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.account h1 {
+  margin-bottom: 1.5rem;
+  font-family: "Roboto Mono", monospace;
+}
+.account .card .profile-pic img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  position: absolute;
+  top: -2rem;
+  left: 1rem;
+  border: 1px solid black;
+}
+.profile-name {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  max-width: 500px;
+}
+.account .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(181, 195, 188);
+  box-shadow: 0 0 20px black;
+  border-radius: 20px;
+  padding: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding-top: 4rem;
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  min-width: 300px;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+.account p {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+}
+.account label {
+  font-family: "Acme", sans-serif;
+  font-weight: 300;
+}
+.account .order-details {
+  background-color: #189c6c;
+  max-height: 340px;
+  color: rgb(255, 255, 255);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: width 0.6s;
+  border-radius: 15px;
+  position: relative;
+}
+.account .order-details .loading-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.account .width {
+  width: 300px;
+  margin-left: 10px;
+  padding: 1rem;
+}
+.order-width-move {
+  width: 0;
+  margin-left: 0;
+  transform: translate(-100px);
+}
+.account .order-details::-webkit-scrollbar {
+  display: none;
+}
+.order-history .history-details {
+  padding: 1rem;
+  border-bottom: 1px solid black;
+  line-height: 1.5rem;
+}
+.account .card .orders {
+  padding: 0.5rem;
+  color: black;
+}
+.account .card .orders i {
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+.account .card .orders:hover {
+  opacity: 0.6;
+}
+.account .card .orders:active {
+  color: rgb(91, 87, 87);
+}
+.account .logout {
+  color: rgb(205, 38, 38);
+}
+.account .logout i {
+  margin-left: 5px;
+}
+.account .logout:hover {
+  color: red;
+}
+.account .feedback-dot {
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  padding: 1rem;
+}
+.account .feedback-dot div {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  margin-top: 3px;
+  border-radius: 50%;
+}
+.account .shade {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 6;
+}
+.account .feedback-btn {
+  z-index: 5;
+  position: absolute;
+  right: -3rem;
+  top: 5rem;
+  background-color: rgb(79, 221, 152);
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.account .feedback-btn:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+.account .feedback-btn:active {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  scale: 0.8;
+}
+.account .div-field .textarea-report {
+  width: 90%;
+  height: 80%;
+  resize: none;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  border-radius: 15px;
+}
+.account .div-field .exclamation {
+  position: absolute;
+  top: -2.6rem;
+  font-size: 3rem;
+  padding: 1rem;
+  z-index: 8;
+  color: rgb(255, 245, 245);
+  background-color: rgb(65, 130, 148);
+  border-radius: 50%;
+}
+.account .div-field .report-submit {
+  position: absolute;
+  bottom: -1rem;
+  border: none;
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: "Sofia Sans", sans-serif;
+  transition: all 0.3s;
+}
+.account .div-field .report-submit:active {
+  background-color: rgb(84, 81, 81);
+  color: white;
+  scale: 1.1;
+}
+.account .div-field .report-submit:hover {
+  background-color: rgb(84, 81, 81);
+  color: white;
+}
+.account .div-field {
+  width: 50%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 15px;
+  z-index: 7;
+}
+@media (max-width: 630px) {
+  .account .feedback-btn {
+    right: -1rem;
+    top: 5rem;
+  }
+  .account .card p {
+    max-width: 330px;
+  }
+  .account .container {
+    flex-direction: column;
+    padding: 1rem 0 0 0;
+  }
+  .account .order-details {
+    transition: height 0.6s;
+    border-radius: 15px;
+    width: 300px;
+  }
+  .account .width {
+    margin-top: 10px;
+    padding: 1rem;
+    height: 340px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .order-width-move {
+    height: 0;
+    margin-left: 0;
+    overflow: hidden;
+    transform: translate(0, -100px);
+  }
+}
+@media (max-width: 812px) {
+  .account .ac-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .account .heading {
+    margin-top: 1rem;
+    animation: none;
+  }
+}
+@media (max-width: 500px) {
+  .account .card {
+    padding: 4rem 0.5rem 0 0.5rem;
+    line-height: 2rem;
+  }
+  .account .card label {
+    font-size: 1.2rem;
+  }
+  .account .card p {
+    font-size: 1rem;
+  }
+  .account .card .orders {
+    padding: 0 0 0.5rem 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-5px, -5px);
+  }
+  50% {
+    transform: translate(-5px, 5px);
+  }
+  75% {
+    transform: translate(5px, 5px);
+  }
+  100% {
+    transform: translate(5px, -5px);
+  }
+}

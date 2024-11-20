@@ -1,0 +1,117 @@
+.request .container .request-list {
+  background-color: rgb(163, 214, 178);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  width: 100%;
+}
+.request {
+  transition: all 0.3s;
+}
+.request .container .request-list .flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.request .container .request-list .address {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.request .container .request-list .address label {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.RList .container {
+  width: 80%;
+  margin: 1rem auto auto auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.request .container .request-list h1 {
+  font-family: "Acme", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.request .container .request-list p {
+  font-family: "Jost", sans-serif;
+}
+.request .container .request-list label {
+  font-family: "Abel", sans-serif;
+}
+.request .container .request-list .mode select {
+  border-radius: 10px;
+  border: none;
+  color: rgb(79, 88, 95);
+  background-color: rgb(148, 200, 114);
+}
+.request .container .request-list button {
+  margin-top: 1rem;
+  height: 30px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px black;
+  transition: all 0.3s;
+}
+.request .container .request-list button:hover {
+  opacity: 0.8;
+}
+.request .container .request-list button:active {
+  scale: 0.8;
+}
+.RList .container .react-load,
+.RepList .react-load {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  right: 7%;
+  top: 40%;
+}
+@media (max-width: 1519px) {
+  .RList .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+  }
+  .request .container .request-list {
+    width: 100%;
+    grid-column-gap: 1rem;
+  }
+}
+@media (max-width: 1135px) {
+  .RList .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+  }
+  .request .container .request-list {
+    width: 100%;
+    grid-column-gap: 1rem;
+  }
+}
+@media (max-width: 759px) {
+  .RList .container {
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

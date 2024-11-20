@@ -1,0 +1,34 @@
+.main-body {
+  background-color: rgb(219, 216, 219);
+  overflow-y: hidden;
+  min-height: 100vh;
+  transition: all 0.5s;
+  width: 100%;
+  position: relative;
+}
+.main-body .contain-body {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 1rem;
+  margin-top: 1rem;
+  grid-column-gap: 2rem;
+  padding-bottom: 2rem;
+}
+.main-body .load-react {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+  right: -40%;
+  /* transform: translate(-10%, -30%); */
+  z-index: 10;
+}
+@media (max-width: 1230px) {
+  .main-body .contain-body {
+    display: flex;
+    grid-row-gap: 1rem;
+    flex-direction: column;
+  }
+}
