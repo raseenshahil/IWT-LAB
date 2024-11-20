@@ -1,0 +1,19 @@
+<web-app>
+    <servlet>
+        <servlet-name>UserDataServlet</servlet-name>
+        <servlet-class>com.userauth.UserDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserDataServlet</servlet-name>
+        <url-pattern>/user-data</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CookieServlet</servlet-name>
+        <servlet-class>com.userauth.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieServlet</servlet-name>
+        <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+</web-app>
